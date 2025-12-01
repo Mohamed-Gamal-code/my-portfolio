@@ -1,37 +1,43 @@
 /** @format */
 
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
-import { href } from "react-router-dom";
 
 const projects = [
   {
     id: 1,
-    title: "Weather project",
-    description: "A weather application built with React and Tailwind CSS.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "E-commerce Platform", 
+    description:
+    "A fully-featured e-commerce platform built on Next.js and Node.js. It includes user authentication, a product management system (CMS), and secure payment processing (Stripe). The interface is developed using TypeScript and TailwindCSS to ensure a fast and responsive user experience.",
+    image: "/projects/E-commerce.jpg",
+    tags: ["Next.js", "Node.js", "TypeScript", "TailwindCSS",  "Full-Stack","Stripe"],
+    demoUrl: "https://ecommerce-frontend-alpha-gray.vercel.app/",
+    githubUrl: "https://github.com/ahmedalioo22mm-boop/ecommerce-frontend",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Doctor Appointment Booking System",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+ "An integrated system for booking and managing doctor appointments, built on React and Node.js. It provides an easy-to-use interface for both doctors and patients, featuring a responsive layout and attractive design using TailwindCSS.",
+    image: "/projects/doctor.jpg",
+    tags: [
+      "React",
+      "Node.js",
+      "TailwindCSS",
+      "Full-Stack",
+      "Appointment Booking",
+    ],
+    demoUrl: "https://doctor-frontend-ten.vercel.app/",
+    githubUrl: "https://github.com/ahmedalioo22mm-boop/doctor-frontend",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "AuraStore Online Shop",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
+      "A responsive multi-page e-commerce website built with pure HTML, CSS, and JavaScript. Features a product catalog and seamless navigation.", // وصف معدّل
     image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["HTML", "CSS", "JavaScript", "Responsive Design"], // علامات محدّثة
+    demoUrl: "https://online-store-one-inky.vercel.app/",
+    githubUrl: "https://github.com/ahmedalioo22mm-boop/Online-store",
   },
 ];
 
@@ -53,7 +59,7 @@ export const ProjectsSection = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover flex flex-col" // flex flex-col للمساعدة في ترتيب المحتوى
             >
               <div className="h-48 overflow-hidden">
                 <img
@@ -63,37 +69,57 @@ export const ProjectsSection = () => {
                 />
               </div>
 
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
+              <div className="p-6 flex-grow flex flex-col justify-between">
+                {" "}
+                {/* flex-grow لتعبئة المساحة المتاحة */}
+                <div className="mb-4">
+                  {" "}
+                  {/* لفصل المحتوى العلوي عن الأزرار */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
+                  <h3 className="text-xl font-semibold mb-1">
+                    {" "}
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {project.description}
+                  </p>
                 </div>
+                {/* جزء الأزرار الجديد */}
+                <div className="mt-4 flex flex-col items-center gap-3">
+                  {" "}
+                  {/* gap-3 لإعطاء مسافة بين الزر والأيقونة */}
+                  {/* زر Live Preview الآن يأخذ عرض كامل للبطاقة في هذا الجزء */}
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 text-base font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  >
+                    <ExternalLink size={18} /> {/* حجم أكبر للأيقونة */}
+                    Live Preview
+                  </a>
+                  {/* أيقونة GitHub منفصلة وأصغر تحت زر Live Preview */}
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground/70 hover:text-primary transition-colors duration-300 p-2 rounded-full hover:bg-muted" // إضافة بعض التنسيقات للأيقونة
+                    aria-label="GitHub Repository" // تحسين إمكانية الوصول
+                  >
+                    <Github size={24} />{" "}
+                    {/* حجم أكبر لأيقونة GitHub لتكون واضحة */}
+                  </a>
+                </div>
+                {/* نهاية جزء الأزرار الجديد */}
               </div>
             </div>
           ))}
@@ -103,6 +129,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/ahmedalioo22mm-boop"
           >
             Check My Github <ArrowRight size={16} />
