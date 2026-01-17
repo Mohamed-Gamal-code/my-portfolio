@@ -3,32 +3,42 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
 const projects = [
-  {
+    {
     id: 1,
-    title: "E-commerce Platform", 
+    title: "MediCare – Healthcare Appointment Platform",
     description:
-    "A fully-featured e-commerce platform built on Next.js and Node.js. It includes user authentication, a product management system (CMS), and secure payment processing (Stripe). The interface is developed using TypeScript and TailwindCSS to ensure a fast and responsive user experience.",
-    image: "/projects/E-commerce.jpg",
-    tags: ["Next.js", "Node.js", "TypeScript", "TailwindCSS",  "Full-Stack","Stripe"],
-    demoUrl: "https://ecommerce-frontend-alpha-gray.vercel.app/",
-    githubUrl: "https://github.com/ahmedalioo22mm-boop/ecommerce-frontend",
+      "A modern healthcare appointment booking platform built with Next.js 14, TypeScript, and Clerk.",
+    image: "/projects/MediCare.png",
+    tags: [
+      "Next.js 14",
+      "TypeScript",
+      "Clerk Authentication",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Full-Stack",
+    ],
+    demoUrl: "https://medicare-platform-gamma.vercel.app/",
+    githubUrl: "https://github.com/Mohamed-Gamal-code/doc-connect",
   },
   {
     id: 2,
-    title: "Doctor Appointment Booking System",
+    title: "E-commerce Platform",
     description:
- "An integrated system for booking and managing doctor appointments, built on React and Node.js. It provides an easy-to-use interface for both doctors and patients, featuring a responsive layout and attractive design using TailwindCSS.",
-    image: "/projects/doctor.jpg",
+      "A fully-featured e-commerce platform built on Next.js and Node.js. It includes user authentication, a product management system (CMS), and secure payment processing (Stripe). The interface is developed using TypeScript and TailwindCSS to ensure a fast and responsive user experience.",
+    image: "/projects/E-commerce.jpg",
     tags: [
-      "React",
+      "Next.js",
       "Node.js",
+      "TypeScript",
       "TailwindCSS",
       "Full-Stack",
-      "Appointment Booking",
+      "Stripe",
     ],
-    demoUrl: "https://doctor-frontend-ten.vercel.app/",
-    githubUrl: "https://github.com/ahmedalioo22mm-boop/doctor-frontend",
+    demoUrl: "https://ecommerce-frontend-alpha-gray.vercel.app/",
+    githubUrl: "https://github.com/ahmedalioo22mm-boop/ecommerce-frontend",
   },
+
+
   {
     id: 3,
     title: "AuraStore Online Shop",
