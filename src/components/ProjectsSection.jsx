@@ -3,7 +3,7 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
 const projects = [
-    {
+  {
     id: 1,
     title: "MediCare – Healthcare Appointment Platform",
     description:
@@ -25,7 +25,7 @@ const projects = [
     title: "E-commerce Platform",
     description:
       "A fully-featured e-commerce platform built on Next.js and Node.js. It includes user authentication, a product management system (CMS), and secure payment processing (Stripe). The interface is developed using TypeScript and TailwindCSS to ensure a fast and responsive user experience.",
-    image: "/projects/E-commerce.jpg",
+    image: "/projects/E-commerce.png",
     tags: [
       "Next.js",
       "Node.js",
@@ -37,17 +37,22 @@ const projects = [
     demoUrl: "https://ecommerce-frontend-alpha-gray.vercel.app/",
     githubUrl: "https://github.com/ahmedalioo22mm-boop/ecommerce-frontend",
   },
-
-
   {
     id: 3,
-    title: "AuraStore Online Shop",
+    title: "Luxestay – Guest Experience Platform",
     description:
-      "A responsive multi-page e-commerce website built with pure HTML, CSS, and JavaScript. Features a product catalog and seamless navigation.", // وصف معدّل
-    image: "/projects/project3.png",
-    tags: ["HTML", "CSS", "JavaScript", "Responsive Design"], // علامات محدّثة
-    demoUrl: "https://online-store-one-inky.vercel.app/",
-    githubUrl: "https://github.com/ahmedalioo22mm-boop/Online-store",
+      "A premium hotel guest experience platform showcasing luxury room browsing, smart reservation flow, and a seamless pay-at-property checkout experience. Built to demonstrate a real-world hospitality product with modern architecture and clean UI.",
+    image: "/projects/luxestay.png",
+    tags: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase",
+      "App Router",
+      "Server Actions",
+    ],
+    demoUrl: "https://luxestay-guest-platform.vercel.app",
+    githubUrl: "https://github.com/Mohamed-Gamal-code/luxestay-guest-experience",
   },
 ];
 
@@ -140,7 +145,7 @@ export const ProjectsSection = () => {
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/ahmedalioo22mm-boop"
+            href="https://github.com/Mohamed-Gamal-code"
           >
             Check My Github <ArrowRight size={16} />
           </a>
