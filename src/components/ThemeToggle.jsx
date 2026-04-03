@@ -11,20 +11,20 @@ export const ThemeToggle = () => {
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
     } else {
-      localStorage.setItem("theme", "light");
       setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const toggleTheme = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
-    } else {
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    if (newMode) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
-      setIsDarkMode(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   };
 
@@ -32,14 +32,16 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
-        "focus:outlin-hidden"
+        // شلنا fixed و top-5 و max-sm:hidden نهائياً
+        "p-2 rounded-xl transition-all duration-300",
+        "hover:bg-zinc-100 dark:hover:bg-zinc-800 active:scale-90",
+        "focus:outline-none flex items-center justify-center"
       )}
     >
       {isDarkMode ? (
-        <Sun className="h-6 w-6 text-yellow-300" />
+        <Sun className="h-5 w-5 md:h-6 md:w-6 text-yellow-400 transition-all" />
       ) : (
-        <Moon className="h-6 w-6 text-blue-900" />
+        <Moon className="h-5 w-5 md:h-6 md:w-6 text-slate-700 dark:text-blue-400 transition-all" />
       )}
     </button>
   );
